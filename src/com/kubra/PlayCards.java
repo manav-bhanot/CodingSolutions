@@ -52,7 +52,7 @@ public class PlayCards {
 		System.out.println("Enter suit");
 		String suit = scan.next();
 
-		System.out.println("Enter card value");
+		System.out.println("Enter card textValue");
 		String val = scan.next();
 		System.out.println("Searched card is at position : " + (d.search(suit, val) + 1));
 

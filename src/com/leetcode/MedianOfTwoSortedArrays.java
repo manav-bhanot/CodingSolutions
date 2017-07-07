@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.leetcode.medianoftwosortedarrays;
+package com.leetcode;
 
 /**
  * @author Manav
  *
  */
-public class Solution {
+public class MedianOfTwoSortedArrays {
 
 	/**
 	 * @param args

@@ -16,7 +16,7 @@ import java.util.List;
  *         can be an integer, a sign or a letter. Each method depicts a special
  *         rule as given below
  * 
- *         1. If a throw hits a block marked with an INTEGER, the value of the
+ *         1. If a throw hits a block marked with an INTEGER, the textValue of the
  *         INTEGER is added to the total score 2. If a throw hits a block marked
  *         with an 'X', the last score is doubled and added to the total score.
  *         3. If a throw hits a block marked with a +, the last two scores are

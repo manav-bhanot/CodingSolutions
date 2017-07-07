@@ -68,7 +68,7 @@ public class FindAllAnagrams {
 		while (right < s.length()) {
 			
 			// move right everytime, if the character exists in p's hash, decrease the count
-			// current hash value >= 1 means the character is existing in p
+			// current hash textValue >= 1 means the character is existing in p
 			if (p_chars[s.charAt(right)] >= 1) {
 				len--;
 			}

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.leetcode.twosum;
+package com.leetcode;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -21,7 +21,7 @@ import java.util.Set;
  *         Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].
  *
  */
-public class Solution {
+public class TwoSumv1 {
 
 	/**
 	 * @param args

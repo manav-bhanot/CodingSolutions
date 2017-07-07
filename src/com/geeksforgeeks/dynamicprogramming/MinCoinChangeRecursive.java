@@ -27,7 +27,7 @@ public class MinCoinChangeRecursive {
 		// Initialize result
 		int minCoins = Integer.MAX_VALUE;
 
-		// Try every coin that has smaller value than 
+		// Try every coin that has smaller textValue than 
 		for (int i=0; i < coins.length; i++) {
 			if (coins[i] <= remainingAmount) {
 				int numCoins = findMinCoins(remainingAmount - coins[i]);
@@ -47,7 +47,7 @@ public class MinCoinChangeRecursive {
 	public static void main(String[] args) {
 		MinCoinChangeRecursive obj = new MinCoinChangeRecursive();
 		
-		// Initialize the result array with MAX value
+		// Initialize the result array with MAX textValue
 		for (int i=0; i < obj.result.length; i++) {
 			obj.result[i] = Integer.MAX_VALUE;
 		}

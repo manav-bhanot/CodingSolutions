@@ -18,20 +18,22 @@ package com.leetcode;
  */
 public class ShortestPathInAMazeCoveringMultipleDestinations {
 
-	static int shortestPath = Integer.MAX_VALUE;
-	static int foodItems;
+	int shortestPath = Integer.MAX_VALUE;
+	int foodItems;
 
 	public static void main(String[] args) {
+		
+		ShortestPathInAMazeCoveringMultipleDestinations obj = new ShortestPathInAMazeCoveringMultipleDestinations();
 
 		String[][] grid = new String[][] { { "X", "X", "X", "X", "X" }, { "X", "*", "O", "O", "X" },
 				{ "X", "O", "O", "X", "X" }, { "X", "#", "O", "O", "X" }, { "#", "O", "O", "O", "X" },
 				{ "X", "#", "O", "X", "X" } };
 				
-		System.out.println(findShortestPath(grid));
+		System.out.println(obj.findShortestPath(grid));
 
 	}
 
-	private static int findShortestPath(String[][] grid) {
+	private int findShortestPath(String[][] grid) {
 
 		int totalFoodItems = 0;
 
@@ -75,7 +77,7 @@ public class ShortestPathInAMazeCoveringMultipleDestinations {
 		return shortestPath;
 	}
 
-	private static void findShortestPathInGrid(String[][] grid, boolean[][] isVisited, int[][] directions,
+	private void findShortestPathInGrid(String[][] grid, boolean[][] isVisited, int[][] directions,
 			int totalFoodItems, int i, int j, int path) {
 		
 		System.out.println("Now I am at position : " + i + ", " + j);
@@ -139,11 +141,11 @@ public class ShortestPathInAMazeCoveringMultipleDestinations {
 		}
 	}
 
-	private static boolean blocked(String[][] m, int i, int j) {
+	private boolean blocked(String[][] m, int i, int j) {
 		return (i >= 0 && i < m.length && j >= 0 && j < m[0].length && m[i][j] == "X");
 	}
 
-	private static boolean isValid(String[][] m, int i, int j) {
+	private boolean isValid(String[][] m, int i, int j) {
 		return (i >= 0 && i < m.length && j >= 0 && j < m[0].length);
 	}
 

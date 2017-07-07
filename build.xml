@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="CodingSolutions">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="CodingSolutions.classpath">
+        <pathelement location="bin"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="CodingSolutions.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target name="AccountTransactions">
+        <java classname="com.allegient.creditunion.testclasses.AccountTransactions" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="AsciiProduct">
+        <java classname="com.misc.AsciiProduct" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="BaseballBlockGame">
+        <java classname="com.amazon.BaseballBlockGame" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="CountAndSay">
+        <java classname="com.leetcode.CountAndSay" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="CountTripletsv1">
+        <java classname="com.hyperscience.CountTripletsv1" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="CountTripletsv2">
+        <java classname="com.hyperscience.CountTripletsv2" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="CreateBSTAndPrintPreOrder">
+        <java classname="com.hyperscience.CreateBSTAndPrintPreOrder" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="CreateBSTv1">
+        <java classname="com.amazon.CreateBSTv1" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="Deck">
+        <java classname="com.kubra.Deck" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="DigitSum">
+        <java classname="com.codefights.DigitSum" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="DivisibleByThree">
+        <java classname="com.geeksforgeeks.amazon.DivisibleByThree" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="FindAllAnagrams">
+        <java classname="com.amazon.FindAllAnagrams" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="FindEqualPoint">
+        <java classname="com.geeksforgeeks.amazon.FindEqualPoint" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="FindUncommonCharacters">
+        <java classname="com.geeksforgeeks.amazon.FindUncommonCharacters" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="JounreyToTheMoon">
+        <java classname="com.hackerrank.algorithm.graphtheory.JounreyToTheMoon" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="KMP">
+        <java classname="com.misc.KMP" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="KnightTour">
+        <java classname="com.geeksforgeeks.backtracking.KnightTour" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="KNumbersWithMostOccurences">
+        <java classname="com.geeksforgeeks.amazon.KNumbersWithMostOccurences" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="LunchMenu">
+        <java classname="com.amazon.LunchMenu" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="MinCoinChange">
+        <java classname="com.geeksforgeeks.dynamicprogramming.MinCoinChange" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="MinCoinChangeRecursive">
+        <java classname="com.geeksforgeeks.dynamicprogramming.MinCoinChangeRecursive" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="ModifyLinkedListContents">
+        <java classname="com.geeksforgeeks.amazon.ModifyLinkedListContents" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="PartyInvitation">
+        <java classname="com.amazon.PartyInvitation" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="PlayCards">
+        <java classname="com.kubra.PlayCards" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="ProductRecommendations">
+        <java classname="com.amazon.ProductRecommendations" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="RatInAMaze">
+        <java classname="com.geeksforgeeks.backtracking.RatInAMaze" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="ShortestPathInAMazeCoveringMultipleDestinations">
+        <java classname="com.leetcode.ShortestPathInAMazeCoveringMultipleDestinations" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="StringReversal">
+        <java classname="com.wizeline.StringReversal" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="Test4">
+        <java classname="com.Test4" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+    <target name="ValidateOpenAndCloseBraces">
+        <java classname="com.amazon.ValidateOpenAndCloseBraces" failonerror="true" fork="yes">
+            <classpath refid="CodingSolutions.classpath"/>
+        </java>
+    </target>
+</project>

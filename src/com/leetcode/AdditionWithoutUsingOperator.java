@@ -1,6 +1,6 @@
-package com.leetcode.bitwiseaddition;
+package com.leetcode;
 
-public class Solution {
+public class AdditionWithoutUsingOperator {
 
 	public int getSum(int a, int b) {
 		

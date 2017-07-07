@@ -71,7 +71,7 @@ public class Solution {
 				stack.push(i);
 				i++;
 			} else {
-				// calculate max value when the current height is less than the
+				// calculate max textValue when the current height is less than the
 				// previous one
 				int p = stack.pop();
 				int h = height[p];

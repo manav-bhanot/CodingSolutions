@@ -8,10 +8,10 @@ import java.util.Random;
 /**
  * @author Manav
  * 
- * A BST is defined as a binary tree in which each node satisfies the property such that its value
- * is larger than the value of every node in its left subtree and less than or equal to the value
+ * A BST is defined as a binary tree in which each node satisfies the property such that its textValue
+ * is larger than the textValue of every node in its left subtree and less than or equal to the textValue
  * of every node in its right subtree. The distance between the two values in a binary search tree
- * is the minimum number of edges traversed to reach from one value to the other.
+ * is the minimum number of edges traversed to reach from one textValue to the other.
  * 
  * You are given a list of unique n numbers. Construct a BST by inserting each integer in the given order
  * without rebalancing the tree. Then, find the distance between the two given nodes of the BST representing

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.leetcode.addtwonumbers;
+package com.leetcode;
 
 /**
  * @author Manav
@@ -17,7 +17,7 @@ package com.leetcode.addtwonumbers;
  *         Input: (2 -> 4 -> 3) + (5 -> 6 -> 4) Output: 7 -> 0 -> 8
  *
  */
-public class Solution {
+public class AddTwoNumbers {
 
 	/**
 	 * @param args
