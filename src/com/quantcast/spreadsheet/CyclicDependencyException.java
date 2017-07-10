@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.quantcast.codingchallenge;
+package com.quantcast.spreadsheet;
 
 import java.util.ArrayList;
 import java.util.List;

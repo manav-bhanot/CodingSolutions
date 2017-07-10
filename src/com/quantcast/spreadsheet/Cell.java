@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.quantcast.codingchallenge;
+package com.quantcast.spreadsheet;
 
 import java.util.Stack;
 
@@ -51,12 +51,12 @@ public class Cell {
 	 * @param cell
 	 * @throws CyclicDependencyException
 	 */
-	public void evaluate(Cell[][] sheet) throws CyclicDependencyException {
+	public Float evaluate(Cell[][] sheet) throws CyclicDependencyException {
 
 		// BASE CASE
 		// Return if this cell already has a numeric value (either calculated or taken as initial input)
 		if (this.isNumericValue) {
-			return;
+			return this.numericValue;
 		}
 
 		// If this cell's expression is already under evaluation
@@ -81,7 +81,7 @@ public class Cell {
 		Stack<Float> operands = new Stack<Float>();
 		Float num1 = null, num2 = null;
 		
-		for (String t : this.textValue.split(" +")) {
+		for (String t : this.expr.split(" +")) {
 			
 			switch (t.trim()) {
 
@@ -133,8 +133,7 @@ public class Cell {
 
 					// Recursively call referred cell and evaluate it
 					try {
-						referredCell.evaluate(sheet);
-						val = referredCell.getNumericValue();
+						val = referredCell.evaluate(sheet);
 					} catch (CyclicDependencyException cyclicDepEx) {
 
 						// Add the current cell to the arraylist of this cyclic dependency exception.
@@ -147,12 +146,14 @@ public class Cell {
 				operands.push(val);
 			}
 		}
-		// Set the calculated cell's textValue
+		// Set the calculated cell's numericValue so as to avoid future calculations
 		// Set the flag so that further cells could know that this cell now has a
-		// textValue
+		// numeric value now
 		this.numericValue = operands.pop();
 		this.isNumericValue = true;
 		this.isExpressionUnderEvaluation = false;
+		
+		return this.numericValue;
 	}
 
 	public int[] calculateLocation(String token) {
