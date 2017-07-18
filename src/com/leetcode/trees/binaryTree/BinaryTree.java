@@ -44,9 +44,9 @@ public class BinaryTree<E> {
 			TreeNode<E> node = queue.remove();
 			
 			if (node != null) {
-				node.left = new TreeNode<E>(arr[i]);			
+				node.left = new TreeNode<E>(arr[i]);
 				node.right = new TreeNode<E>(arr[i+1]);
-			}			
+			}
 			
 			queue.add(node.left);
 			queue.add(node.right);
@@ -54,6 +54,6 @@ public class BinaryTree<E> {
 			i += 2;
 		}
 		
-		return root;				
+		return root;
 	}
 }

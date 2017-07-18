@@ -53,11 +53,10 @@ public class DivisibleByThree {
 		totalGroups = totalGroups + (groups[1] * groups[2]);	
 		
 		// Now groups of three
-		// Any three numbers whose remainders adds up to a multiple of 6 form valid groups
+		// Any three numbers whose remainders adds up to a multiple of 3 form valid groups
 		totalGroups += ((groups[0]) * (groups[0] - 1) * (groups[0]  - 2)) / 6;
 		totalGroups += ((groups[1]) * (groups[1] - 1) * (groups[1]  - 2)) / 6;
-		totalGroups += ((groups[2]) * (groups[2] - 1) * (groups[2]  - 2)) / 6; 
-		
+		totalGroups += ((groups[2]) * (groups[2] - 1) * (groups[2]  - 2)) / 6; 		
 		totalGroups += groups[0] * groups[1] * groups[2];
 		
 		return totalGroups;
