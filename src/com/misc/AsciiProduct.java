@@ -33,9 +33,7 @@ public class AsciiProduct {
 			//System.out.println((int) s.charAt(i) + " x " + arr[i % 4]);
 			sum += (s.charAt(i) * arr[i % 4]);
 		}
-		
-		return sum;
-		
+		return sum;		
 	}
 
 	private static int findAsciiProductRecursively(String s, int[] arr, int len) {
@@ -45,10 +43,6 @@ public class AsciiProduct {
 		}
 		int ch = (int)s.charAt(0);
 		
-		return ch * arr[(len - s.length()) % 4]	+ findAsciiProductRecursively(s.substring(1), arr, len);	
-		
+		return ch * arr[(len - s.length()) % 4]	+ findAsciiProductRecursively(s.substring(1), arr, len);		
 	}
-	
-	
-
 }

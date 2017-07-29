@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.leetcode;
+package com.leetcode.trees.binaryTree;
 
 /**
  * @author Manav
