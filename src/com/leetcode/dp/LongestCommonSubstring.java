@@ -16,7 +16,7 @@ public class LongestCommonSubstring {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(findLCS("manav", "navam"));
+		System.out.println(findLCS("maninder", "manpinder"));
 	}
 
 	private static String findLCS(String s1, String s2) {
@@ -49,12 +49,14 @@ public class LongestCommonSubstring {
 							maxLen = lcs[i][j];
 							results.clear();
 						}
+						
+						// Add the maximum length substring found till now
 						results.add(s2.substring(j - maxLen + 1, j+1));
 					}					
 				}
 			}
 		}		
-		System.out.println(maxLen + " : " + results.get(0));	
+		// System.out.println(maxLen + " : " + results.get(0));	
 		return results.get(0);
 	}
 

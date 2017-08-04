@@ -3,9 +3,6 @@
  */
 package com.leetcode.dp;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author Manav
  *
@@ -25,7 +22,7 @@ public class LongestIncreasingSubsequence {
 		
 		while (low < high) {
 			
-			int mid = (int)Math.ceil(low + (high - low)/2);
+			int mid = low + (high - low)/2;
 			
 			if (num <= nums[mid]) {
 				high = mid;
@@ -50,7 +47,7 @@ public class LongestIncreasingSubsequence {
 				endElements[len] = nums[i];
 				len++;
 			} else {
-				int idx = findIndex(nums, 0, len - 1, nums[i]);
+				int idx = findIndex(nums, -1, len - 1, nums[i]);
 				endElements[idx] = nums[i];
 			}			
 		}
