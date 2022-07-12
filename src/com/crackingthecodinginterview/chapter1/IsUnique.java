@@ -5,6 +5,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Implement an algorithm to determine if a string has all unique characters. What if you
+ * cannot use additional data structures?
+ */
 public class IsUnique {
 
     public static void main(String[] args) {
