@@ -16,7 +16,7 @@ public class Urlify {
     }
 
     private static char[] urlify(String inputString, int trueLength) {
-        
+
         char[] outputCharArray = inputString.toCharArray();
 
         int pointerOne = outputCharArray.length - 1; // tracks the array
@@ -25,16 +25,13 @@ public class Urlify {
         while (pointerOne >= 0 && pointerTwo >= 0) {
             if (inputString.charAt(pointerTwo) != ' ') {
                 outputCharArray[pointerOne] = inputString.charAt(pointerTwo);
-                pointerOne--;
-                pointerTwo--;
             } else {
                 outputCharArray[pointerOne] = '0';
                 outputCharArray[--pointerOne] = '2';
                 outputCharArray[--pointerOne] = '%';
-
-                pointerOne--;
-                pointerTwo--;
             }
+            pointerOne--;
+            pointerTwo--;
         }
         return outputCharArray;
     }
