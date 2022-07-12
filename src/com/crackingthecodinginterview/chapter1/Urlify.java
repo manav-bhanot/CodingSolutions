@@ -16,12 +16,10 @@ public class Urlify {
     }
 
     private static char[] urlify(String inputString, int trueLength) {
-
-        int inputStringLength = inputString.length();
-
+        
         char[] outputCharArray = inputString.toCharArray();
 
-        int pointerOne = inputStringLength - 1; // tracks the array
+        int pointerOne = outputCharArray.length - 1; // tracks the array
         int pointerTwo = trueLength - 1;  // tracks the string
 
         while (pointerOne >= 0 && pointerTwo >= 0) {
