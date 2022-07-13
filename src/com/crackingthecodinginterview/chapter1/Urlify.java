@@ -17,22 +17,22 @@ public class Urlify {
 
     private static char[] urlify(String inputString, int trueLength) {
 
-        char[] outputCharArray = inputString.toCharArray();
+        char[] urlifiedCharArray = inputString.toCharArray();
 
-        int pointerOne = outputCharArray.length - 1; // tracks the array
+        int pointerOne = urlifiedCharArray.length - 1; // tracks the array
         int pointerTwo = trueLength - 1;  // tracks the string
 
         while (pointerOne >= 0 && pointerTwo >= 0) {
             if (inputString.charAt(pointerTwo) != ' ') {
-                outputCharArray[pointerOne] = inputString.charAt(pointerTwo);
+                urlifiedCharArray[pointerOne] = inputString.charAt(pointerTwo);
             } else {
-                outputCharArray[pointerOne] = '0';
-                outputCharArray[--pointerOne] = '2';
-                outputCharArray[--pointerOne] = '%';
+                urlifiedCharArray[pointerOne] = '0';
+                urlifiedCharArray[--pointerOne] = '2';
+                urlifiedCharArray[--pointerOne] = '%';
             }
             pointerOne--;
             pointerTwo--;
         }
-        return outputCharArray;
+        return urlifiedCharArray;
     }
 }
