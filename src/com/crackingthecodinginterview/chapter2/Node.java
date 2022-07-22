@@ -3,27 +3,34 @@
  */
 package com.crackingthecodinginterview.chapter2;
 
+import java.util.Random;
+
 /**
  * @author Manav
  *
  */
 class Node {
-	public Node next = null;
+	public Node next;
 	public int data;
 
 	public Node(int data) {
-		super();
 		this.data = data;
 	}
 
 	public void printLinkedList() {
-		System.out.println("\n");
+
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+
 		Node n = this;
 		while (n != null) {
-			System.out.print(n.data + " ");
+			sb.append(n.data).append(",");
 			n = n.next;
 		}
-		System.out.println("\n");
+		sb.deleteCharAt(sb.lastIndexOf(","));
+
+		sb.append("]");
+		System.out.println(sb);
 	}
 
 	public void appendToTail(int d) {
@@ -35,24 +42,39 @@ class Node {
 		n.next = end;
 	}
 
-	public Node deleteNode(Node head, int d) {
+	public Node deleteNodeByValue(Node head, int d) {
+		Node n = new Node(this.data);
+		n.next = head.next;
 
-		return null;
+		while (n != null) {
+			if (n.data == d) {
+				n.data = n.next.data;
+				n.next = n.next.next;
+				break;
+			}
+			n = n.next;
+		}
+		return head;
 	}
 
-	public Node getNext() {
-		return next;
+	public void deleteNodeByReference(Node nodeToBeDeleted) {
+		nodeToBeDeleted.data = nodeToBeDeleted.next.data;
+		nodeToBeDeleted.next = nodeToBeDeleted.next.next;
 	}
 
-	public void setNext(Node next) {
-		this.next = next;
-	}
+	public static Node createLinkedListWithRandomIntegers(int size) {
 
-	public int getData() {
-		return data;
-	}
+		Random random = new Random();
+		int bound = 10000;
 
-	public void setData(int data) {
-		this.data = data;
+		Node head = new Node(random.nextInt(bound));
+
+		for (int idx = 1; idx < size; idx++) {
+
+			int data = random.nextInt(bound);
+			head.appendToTail(data);
+		}
+
+		return head;
 	}
 }
