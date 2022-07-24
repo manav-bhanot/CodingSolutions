@@ -12,7 +12,6 @@ import java.util.Random;
 class Node {
 	public Node next;
 	public int data;
-
 	public Node(int data) {
 		this.data = data;
 	}
@@ -33,13 +32,14 @@ class Node {
 		System.out.println(sb);
 	}
 
-	public void appendToTail(int d) {
+	public Node appendToTail(int d) {
 		Node end = new Node(d);
 		Node n = this;
 		while (n.next != null) {
 			n = n.next;
 		}
 		n.next = end;
+		return end;
 	}
 
 	public Node deleteNodeByValue(Node head, int d) {
@@ -55,6 +55,17 @@ class Node {
 			n = n.next;
 		}
 		return head;
+	}
+
+	public Node getNodeAtIndex(int index) {
+		Node nodeAtIndex = this;
+		int idx = 0;
+		while (idx < index) {
+			nodeAtIndex = nodeAtIndex.next;
+			idx++;
+		}
+
+		return nodeAtIndex;
 	}
 
 	public void deleteNodeByReference(Node nodeToBeDeleted) {

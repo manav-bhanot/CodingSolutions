@@ -11,4 +11,61 @@ package com.crackingthecodinginterview.chapter2;
  * Hints: #3, #24
  */
 public class Partition {
+    static Node partitionLinkedList(Node head, int p) {
+
+        Node curr = head;
+        Node end = head;
+
+        /**
+         * SLIGHT IMPROVEMENT: WE DON'T ACTUALLY NEED SIZE. See For loop comment below for why ?
+         */
+        int size = 1;
+
+        /**
+         * Move towards the end of the list first thereby noting the size.
+         */
+        while (end.next != null) {
+            end = end.next;
+            size++;
+        }
+
+        /**
+         * Keep appending nodes with value > partition value at the end.
+         *
+         * WE DONT ACTUALLY NEED A SIZE BASED LOOP HERE. We could have just checked if curr != null
+         * as eventually LL will terminate
+         */
+        for (int i = 0; i < size; i++) {
+            if (curr.data >= p) {
+                Node newNode = new Node(curr.data);
+                end.next = newNode;
+                end = newNode;
+
+                curr.data = curr.next.data;
+                curr.next = curr.next.next;
+
+            } else {
+                curr = curr.next;
+            }
+        }
+
+        return head;
+    }
+
+    public static void main(String[] args) {
+
+        Node linkedList = new Node(3) ;
+        linkedList.appendToTail(5);
+        linkedList.appendToTail(8);
+        linkedList.appendToTail(5);
+        linkedList.appendToTail(10);
+        linkedList.appendToTail(2);
+        linkedList.appendToTail(1);
+
+        linkedList.printLinkedList();
+
+        Node partitionedList = partitionLinkedList(linkedList, 5);
+
+        partitionedList.printLinkedList();
+    }
 }
