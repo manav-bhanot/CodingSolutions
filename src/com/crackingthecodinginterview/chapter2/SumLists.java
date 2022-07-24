@@ -69,7 +69,7 @@ public class SumLists {
             sum = (firstNumber.data + carry) % 10;
             carry = (firstNumber.data + carry) / 10;
             n.next = sumListsRecursively(firstNumber.next, null, sum, carry);
-        } else if (secondNumber != null) {
+        } else {
             sum = (secondNumber.data + carry) % 10;
             carry = (secondNumber.data + carry) / 10;
             n.next = sumListsRecursively(null, secondNumber.next, sum, carry);

@@ -16,7 +16,7 @@ class Node {
 		this.data = data;
 	}
 
-	public void printLinkedList() {
+	public String printLinkedList() {
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("[");
@@ -29,7 +29,8 @@ class Node {
 		sb.deleteCharAt(sb.lastIndexOf(","));
 
 		sb.append("]");
-		System.out.println(sb);
+		//System.out.println(sb);
+		return sb.toString();
 	}
 
 	public Node appendToTail(int d) {

@@ -7,7 +7,7 @@ package com.crackingthecodinginterview.chapter2;
  * "right partition"; it does not need to appear between the left and right partitions.
  * EXAMPLE
  * Input: 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 [partition = 5)
- * Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
+ * Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8  (There could be other right solutions as well because order does not matter here)
  * Hints: #3, #24
  */
 public class Partition {
