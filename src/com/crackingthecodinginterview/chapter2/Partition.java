@@ -15,10 +15,7 @@ public class Partition {
 
         Node curr = head;
         Node end = head;
-
-        /**
-         * SLIGHT IMPROVEMENT: WE DON'T ACTUALLY NEED SIZE. See For loop comment below for why ?
-         */
+        
         int size = 1;
 
         /**
@@ -32,8 +29,6 @@ public class Partition {
         /**
          * Keep appending nodes with value > partition value at the end.
          *
-         * WE DONT ACTUALLY NEED A SIZE BASED LOOP HERE. We could have just checked if curr != null
-         * as eventually LL will terminate
          */
         for (int i = 0; i < size; i++) {
             if (curr.data >= p) {
