@@ -51,6 +51,9 @@ public class Solution {
                 maxArea = localArea;
             }
 
+            /**
+             * IMP: Be Greedy here, to get the max area, shift the corresponding pointer which is at the shorter height.
+             */
             if (height[rightIdx] < height[leftIdx]) {
                 rightIdx--;
             } else {

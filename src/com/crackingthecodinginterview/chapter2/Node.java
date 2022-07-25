@@ -43,6 +43,15 @@ class Node {
 		return end;
 	}
 
+	public Node appendToTail(Node node) {
+		Node n = this;
+		while (n.next != null) {
+			n = n.next;
+		}
+		n.next = node;
+		return this;
+	}
+
 	public Node deleteNodeByValue(Node head, int d) {
 		Node n = new Node(this.data);
 		n.next = head.next;

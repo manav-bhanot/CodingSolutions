@@ -15,7 +15,7 @@ public class Partition {
 
         Node curr = head;
         Node end = head;
-        
+
         int size = 1;
 
         /**
