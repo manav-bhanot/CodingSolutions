@@ -14,22 +14,20 @@ public class Intersection {
     static Node findIntersectingNode(Node listOne, Node listTwo) {
         Set<Node> nodeSet = new HashSet<>();
 
-        while (listOne != null || listTwo != null) {
+        // Traverse listOne and add node to the set
+        while (listOne != null) {
+            nodeSet.add(listOne);
+            listOne = listOne.next;
+        }
 
-            if (listOne != null) {
-                if (nodeSet.contains(listOne)) {
-                    return listOne;
-                }
-                nodeSet.add(listOne);
-                listOne = listOne.next;
+        // Traverse listTwo and see if you are able to find the node from listOne in the set.
+        // That would be the intersection point.
+
+        while (listTwo != null) {
+            if (nodeSet.contains(listTwo)) {
+                return listTwo;
             }
-            if (listTwo != null) {
-                if (nodeSet.contains(listTwo)) {
-                    return listTwo;
-                }
-                nodeSet.add(listTwo);
-                listTwo = listTwo.next;
-            }
+            listTwo = listTwo.next;
         }
 
         return null;
@@ -37,6 +35,9 @@ public class Intersection {
 
 
     public static void main(String[] args) {
+
+        Intersection intersection = new Intersection();
+
         Node listTwo = new Node(0);
         listTwo.appendToTail(1);
         listTwo.appendToTail(2);
@@ -47,8 +48,6 @@ public class Intersection {
         listTwo.appendToTail(7);
         listTwo.appendToTail(8);
         listTwo.appendToTail(9);
-
-        System.out.println("List One: " + listTwo.printLinkedList());
 
         Node listOne = new Node(9);
         listOne.appendToTail(8);
@@ -64,11 +63,15 @@ public class Intersection {
 //        listOne.appendToTail(1);
 //        listOne.appendToTail(0);
 
-        System.out.println("List Two: " + listOne.printLinkedList());
+        System.out.println("List One: " + listOne.printLinkedList());
+        System.out.println("List Two: " + listTwo.printLinkedList());
 
-        Node iNode = findIntersectingNode(listOne, listOne);
+        Node iNode = findIntersectingNode(listOne, listTwo);
 
-        System.out.println("Intersecting node is : " + iNode.data);
-
+        if (iNode != null) {
+            System.out.println("Intersecting node is : " + iNode.data);
+        } else {
+            System.out.println("No intersecting node found : " + iNode.data);
+        }
     }
 }
